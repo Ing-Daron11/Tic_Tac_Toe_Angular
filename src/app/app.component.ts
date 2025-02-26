@@ -1,13 +1,15 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   imports: [CommonModule],
+  standalone: true, // This is the key to make it work
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
+  title = 'tic-tac-toe';
   board: string[] = Array(9).fill('');
   currentPlayer: string = 'X';
   winner: string | null = null;
